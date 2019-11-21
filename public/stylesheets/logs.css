@@ -1,0 +1,10 @@
+
+.logs-wrapper {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.logs-wrapper .container {
+    width: 600px;
+}

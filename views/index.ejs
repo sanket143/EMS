@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="/stylesheets/home.css" />
+
+</head>
+
+<body id="body">
+  <% include templates/navbar.ejs %>
+  <div class="form-wrapper">
+    <div class="container">
+      <h3>Event Mangement System</h3>
+      <form class="ui form">
+        <div class="two fields">
+
+          <div class="field">
+            <label>First Name</label>
+            <input type="text" name="first-name" placeholder="First Name">
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input type="text" name="last-name" placeholder="Last Name">
+          </div>
+        </div>
+        <div class="field">
+          <div class="field">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="Email Address">
+          </div>
+        </div>
+        <div class="field">
+          <div class="field">
+            <label>Contact Number</label>
+            <input type="text" name="contact-number" placeholder="Contact Number">
+          </div>
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</body>
+
+</html>
