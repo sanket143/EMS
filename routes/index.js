@@ -1,25 +1,26 @@
 const express = require('express');
-const dbservices = require("./services/dbservices");
+const moment = require('moment');
 const router = express.Router();
+
+const dbservices = require("./services/dbservices");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/logs', function(req, res){
-
-  let insertData = {
-    name: "Sanket Chaudhari",
-    email: "chaudharisanket2000@gmail.com",
-    contactNumber: "+91 7359814667"
+router.get('/visitors', function(req, res){
+  let data = {
+    moment: moment,
   }
-  dbservices.insertOne(insertData).then((result) => {
-    console.log("Succesfully Inserted!");
+  
+  dbservices.getAllData().then((docs) => {
+    data.visitors = docs.reverse();
+
+    res.render('visitors', data);
   }).catch((err) => {
     console.log(err);
   })
-  res.render('logs');
 })
 
 module.exports = router;

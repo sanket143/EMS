@@ -15,38 +15,45 @@
   <div class="form-wrapper">
     <div class="container">
       <h3>Event Mangement System</h3>
-      <form class="ui form">
+      <form class="ui form" id="entry-form">
         <div class="two fields">
 
           <div class="field">
             <label>First Name</label>
-            <input type="text" name="first-name" placeholder="First Name">
+            <input type="text" id="firstname" name="first-name" placeholder="First Name">
           </div>
           <div class="field">
             <label>Last Name</label>
-            <input type="text" name="last-name" placeholder="Last Name">
+            <input type="text" id="lastname" name="last-name" placeholder="Last Name">
           </div>
         </div>
         <div class="field">
           <div class="field">
             <label>Email Address</label>
-            <input type="email" name="email" placeholder="Email Address">
+            <input type="email" id="email" name="email" placeholder="Email Address">
           </div>
         </div>
         <div class="field">
           <div class="field">
             <label>Contact Number</label>
-            <input type="text" name="contact-number" placeholder="Contact Number">
+            <input type="text" id="contactnumber" name="contact-number" placeholder="Contact Number">
           </div>
         </div>
-        <button class="ui button" type="submit">Submit</button>
+        <button class="ui button" id="submitentry" type="submit">Submit</button>
       </form>
     </div>
   </div>
 
+  <div class="ui modal" id="checkedinmsg">
+    <div class="header">EMS</div>
+    <div class="content">
+      <p id="modalmsg">Successfully Checked In!</p>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="/javascripts/home.js"></script>
 </body>
 
 </html>
