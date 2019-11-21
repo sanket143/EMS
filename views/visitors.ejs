@@ -14,36 +14,45 @@
   <% include templates/navbar.ejs %>
   <div class="visitors-wrapper">
     <div class="container">
-      <h3>Visitors</h3>
-      <table class="ui celled table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Contact</th>
-            <th>Check In</th>
-            <th>Check Out</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% for (i in visitors){ %>
-          <tr class="warning">
-            <% visitor = visitors[i] %>
-            <td><%= visitor.firstname %> <%= visitor.lastname %></td>
-            <td><%= visitor.email %></td>
-            <td><%= visitor.contact %></T></td>
-            <td><%= moment(visitor.checkin_timestamp).format("Do MMM YYYY, h:mm:ss a") %></td>
-            <td>None</td>
-          </tr>
-          <% } %>
-        </tbody>
-      </table>
+      <form class="ui form" id="visitors_data">
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>Check In</th>
+              <th>Check Out</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (i in visitors){ %>
+            <tr>
+              <% visitor = visitors[i] %>
+              <td><%= visitor.firstname %> <%= visitor.lastname %></td>
+              <td><%= visitor.email %></td>
+              <td><%= visitor.contact %></T>
+              </td>
+              <td><%= moment(visitor.checkin_timestamp).format("Do MMM YYYY, h:mm:ss a") %></td>
+              <td>
+                <% if(visitor.checkout_timestamp){ %>
+                <%= moment(visitor.checkout_timestamp).format("Do MMM YYYY, h:mm:ss a") %>
+                <% } else { %>
+                <a data-id="<%= visitor._id %>" class="checkout">Check Out</a>
+                <% } %>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </form>
     </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="/javascripts/visitors.js"></script>
 </body>
 
 </html>

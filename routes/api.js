@@ -5,7 +5,7 @@ const dbservices = require("./services/dbservices");
 
 const router = express.Router();
 
-/* GET users listing. */
+/* NEW VISITOR */
 router.post('/submitentry', function(req, res, next) {
 
   let reqdb = req.body;
@@ -32,6 +32,35 @@ router.post('/submitentry', function(req, res, next) {
       auth: false
     });
   })
+
+});
+
+/* CHECKOUT */
+router.post('/checkout', function(req, res, next) {
+
+  let reqdb = req.body;
+  let currentTimeStamp = moment(Date.now()).format();
+
+  let updateData = {
+    checkout_timestamp: currentTimeStamp
+  }
+
+  dbservices.updateData(reqdb.id, updateData).then((result) => {
+    console.log("Updated Successfully!");
+
+    res.json({
+      auth: true,
+      fields: {
+        timestamp: moment(currentTimeStamp).format("Do MMM YYYY, h:mm:ss a")
+      }
+    });
+  }).catch((err) => {
+    console.log(err);
+
+    res.json({
+      auth: false
+    });    
+  });
 
 });
 
