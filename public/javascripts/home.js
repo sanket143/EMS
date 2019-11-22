@@ -28,7 +28,7 @@ $("#submitentry").click(function (e) {
                 firstname.val("");
 
                 // Show message
-                $("#modalmsg").text("Successfully Checked In!");
+                $("#modalmsg").html(`Successfully Checked In!<br><a href="${data.fields.mailUrl}" target="_blank">Mail Preview</a>`);
                 $("#checkedinmsg").modal("show");
             } else {
 

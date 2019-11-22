@@ -16,7 +16,6 @@ router.get('/visitors', function(req, res){
 
   dbservices.getAllData().then((docs) => {
     data.visitors = docs.reverse();
-    console.log(data.visitors);
     res.render('visitors', data);
   }).catch((err) => {
     console.log(err);

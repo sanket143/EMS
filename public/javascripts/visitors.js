@@ -19,13 +19,13 @@ $(".checkout").click(function (e) {
                 ele.parent().html(data.fields.timestamp);
 
                 // Show message
-                $("#modalmsg").text("Successfully Checked Out!");
-                $("#checkedinmsg").modal("show");
+                $("#modalmsg").html(`Successfully Checked Out!<br><a href="${data.fields.mailUrl}" target="_blank">Mail Preview</a>`);
+                $("#checkedoutmsg").modal("show");
             } else {
 
                 // Show Error message
                 $("#modalmsg").text("Error occured while Checking Out!");
-                $("#checkedinmsg").modal("show");
+                $("#checkedoutmsg").modal("show");
             }
 
             $("#visitors_data").removeClass("loading");
@@ -34,7 +34,7 @@ $(".checkout").click(function (e) {
             
             // Show Error message
             $("#modalmsg").text("Error occured while Checking Out!");
-            $("#checkedinmsg").modal("show");
+            $("#checkedoutmsg").modal("show");
             $("#visitors_data").removeClass("loading");
         }
     })

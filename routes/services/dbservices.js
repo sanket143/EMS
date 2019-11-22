@@ -20,9 +20,30 @@ module.exports = {
           if (err) {
             reject(err);
           } else {
-            console.log("Result Inserted!")
+            
             resolve(result);
           }
+        })
+        client.close();
+      })
+    });
+  },
+  find: (id) => {
+    return new Promise((resolve, reject) => {
+      MongoClient.connect(url, (err, client) => {
+        if (err) {
+          reject(err);
+        }
+
+        const db = client.db(dbName);
+        const collection = db.collection('visitors');
+
+        collection.find({ _id: ObjectId(id) }).toArray((err, docs) => {
+          if (err) {
+            reject(err);
+          }
+
+          resolve(docs);
         })
         client.close();
       })
