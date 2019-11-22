@@ -13,9 +13,19 @@ $ npm install
 $ npm start # visit http://localhost:3000 in your browser
 ```
 
-## Features
-
 * Keeps a record of visitors who checks in and out with proper timestamp.
 * Stores data in MongoDB.
 * Gives updates using mails.
 * Keeps track of all visitors and their activity and info.
+
+## Screenshots
+
+![00.png](https://github.com/sanket143/EMS/raw/master/screenshots/00.png)
+![01.png](https://github.com/sanket143/EMS/raw/master/screenshots/01.png)
+![02.png](https://github.com/sanket143/EMS/raw/master/screenshots/02.png)
+![03.png](https://github.com/sanket143/EMS/raw/master/screenshots/03.png)
+![04.png](https://github.com/sanket143/EMS/raw/master/screenshots/04.png)
+![05.png](https://github.com/sanket143/EMS/raw/master/screenshots/05.png)
+![06.png](https://github.com/sanket143/EMS/raw/master/screenshots/06.png)
+![07.png](https://github.com/sanket143/EMS/raw/master/screenshots/07.png)
+![08.png](https://github.com/sanket143/EMS/raw/master/screenshots/08.png)
