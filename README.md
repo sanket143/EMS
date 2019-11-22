@@ -1,6 +1,6 @@
-# EMS (Entry Mangement Software
+# EMS (Entry Mangement Software)
 
-Web app to manage visitors entry. Powered by ExpressJs.
+Web app to manage visitors entry. Powered by [ExpressJs](http://expressjs.com/).
 
 ## Instructions to Run server
 Requires [MongoDB](https://www.mongodb.com/download-center/community) Installed
